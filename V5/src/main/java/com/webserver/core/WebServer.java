@@ -14,6 +14,7 @@ import java.net.Socket;
  *   的页面,资源,功能等.
  * 4:可以管理部署多个不同的网络应用.
  */
+//http://localhost:8088/
 public class WebServer {
     private ServerSocket serverSocket;
     public WebServer(){
