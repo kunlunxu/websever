@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+<center>
+    <h1>用户列表</h1>
+    <table border="1">
+        <tr>
+            <td>用户名</td>
+            <td>密码</td>
+            <td>昵称</td>
+            <td>年龄</td>
+        </tr>
+        <!--for(User user:list){ -->
+        <tr th:each="user:${list}"><!--${key}与context.setVariable("key",xxxx)对应 -->
+            <td th:text="${user.username}">klx</td>
+            <td th:text="${user.password}">123</td>
+            <td th:text="${user.nickname}">qwe</td>
+            <td th:text="${user.age}">46</td>
+        </tr>
+        <!-- {-->
+        <tr th:remove="all"><!--th:remove="all"，生成动态页面时这个标签及其子标签全忽略-->
+            <td >厄齐尔</td>
+            <td>123123</td>
+            <td>46546</td>
+            <td>15</td>
+        </tr>
+
+    </table>
+</center>
+</body>
+</html>

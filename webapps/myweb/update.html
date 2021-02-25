@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改信息</title>
+</head>
+<body>
+<center>
+
+    <FORM action="./updateUser" method="post">
+
+        <table th:each="user:${list}">
+            <h1>修改信息</h1>
+            <br>
+            <tr>
+                <td>姓名:</td>
+                <!-- 表单中所有的输入框都要指定name属性,否则提交时会被忽略-->
+                <td><input name="username" type="text"th:value="${user.username}"></td>
+            </tr>
+            <tr>
+                <td>昵称:</td>
+                <td><input name="nickname" type="text"th:value="${user.password}"></td>
+            </tr>
+            <tr>
+                <td>密码:</td>
+                <td><input name="password" type="password"th:value="${user.nickname}"></td>
+            </tr>
+            <tr>
+                <td th:value="${user.age    }">年龄:</td>
+                <td><input name="age" type="text"></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2">
+                    <!--
+                     submit是提交按钮,点击该按钮会将包含它的form表单提交
+                     -->
+                    <input type="submit" value="修改">
+                </td>
+            </tr>
+        </table>
+    </FORM>
+</center>
+</body>
+</html>
